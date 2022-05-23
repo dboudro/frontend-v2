@@ -16,14 +16,15 @@
     "prepare": "node ./prepare.js",
     "tailwind:build": "tailwind-config-viewer export ./tailwind-static",
     "tailwind:view": "tailwind-config-viewer -o",
-    "generate:voting-gauges": "ts-node -O '{\"module\": \"commonjs\"}' ./src/lib/scripts/voting-gauge.generator.ts"
+    "generate:voting-gauges": "ts-node -O '{\"module\": \"commonjs\"}' ./src/lib/scripts/voting-gauge.generator.ts",
+    "node": "npx hardhat node --fork $(grep ALCHEMY_URL .env | cut -d '=' -f2) --fork-block-number 14828550"
   },
   "devDependencies": {
     "@aave/protocol-js": "^4.3.0",
     "@babel/core": "^7.13.8",
     "@babel/plugin-proposal-numeric-separator": "^7.14.5",
     "@balancer-labs/assets": "github:balancer-labs/assets#master",
-    "@balancer-labs/sdk": "^0.1.11",
+    "@balancer-labs/sdk": "file:../balancer-sdk/balancer-js/balancer-labs-sdk-v0.1.11.tgz",
     "@balancer-labs/sor": "^1.1.0",
     "@balancer-labs/typechain": "^1.0.0",
     "@ensdomains/content-hash": "^2.5.3",
@@ -87,6 +88,7 @@
     "ethereumjs-util": "^7.0.7",
     "events": "^3.3.0",
     "feather-icons": "^4.28.0",
+    "hardhat": "^2.9.6",
     "husky": "^6.0.0",
     "isomorphic-fetch": "^3.0.0",
     "json-to-graphql-query": "^2.0.0",

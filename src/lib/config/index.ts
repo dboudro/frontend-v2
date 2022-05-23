@@ -2,6 +2,7 @@ import { Network } from '@balancer-labs/sdk';
 
 import arbitrum from './arbitrum.json';
 import docker from './docker.json';
+import hardhat from './hardhat.json';
 import homestead from './homestead.json';
 import kovan from './kovan.json';
 import polygon from './polygon.json';
@@ -85,6 +86,7 @@ const config: Record<Network | number, Config> = {
   [Network.RINKEBY]: rinkeby,
   [Network.POLYGON]: polygon,
   [Network.ARBITRUM]: arbitrum,
+  31337: hardhat,
   12345: test,
   // @ts-ignore
   17: docker

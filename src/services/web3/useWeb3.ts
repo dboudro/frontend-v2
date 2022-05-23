@@ -71,7 +71,7 @@ export default function useWeb3() {
   const isMismatchedNetwork = computed(() => {
     return (
       isWalletReady.value &&
-      userNetworkConfig.value?.key !== appNetworkConfig.key
+      userNetworkConfig.value?.key !== appNetworkConfig.chainId.toString()
     );
   });
   const isUnsupportedNetwork = computed(() => {

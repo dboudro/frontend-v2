@@ -80,7 +80,7 @@ export default class TokenListService {
 
       if (uri.endsWith('.eth')) {
         return await this.getByEns(uri);
-      } else if (protocol === 'https') {
+      } else if (protocol === 'https' || uri.includes('/test/')) {
         const { data } = await axios.get<TokenList>(uri);
         return data;
       } else if (protocol === 'ipns') {
